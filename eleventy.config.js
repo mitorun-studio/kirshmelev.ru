@@ -235,7 +235,7 @@ module.exports = function (eleventyConfig) {
 	//------------------------------------------------
 
 	return {
-		pathPrefix: "", // Указываем имя репозитория на Github (можно оставить пустым, если не используется).
+		pathPrefix: "/kirshmelev.ru/", // Указываем имя репозитория на Github (можно оставить пустым, если не используется).
 		addPassthroughFileCopy: true,
 		dataTemplateEngine: "njk",
 		markdownTemplateEngine: "njk",
