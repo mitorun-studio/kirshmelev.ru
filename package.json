@@ -1,0 +1,28 @@
+{
+	"name": "mitosite",
+	"version": "1.0.0",
+	"description": "",
+	"keywords": [],
+	"author": "Oleg Mitorun",
+	"license": "ISC",
+	"main": "eleventy.config.js",
+	"scripts": {
+		"start": "npx @11ty/eleventy --serve --quiet"
+	},
+	"browserslist": [
+		"last 3 version",
+		"> 0.3%",
+		"not dead",
+		"not ie <= 11",
+		"iOS >= 14"
+	],
+	"devDependencies": {
+		"@11ty/eleventy": "^2.0.1",
+		"@11ty/eleventy-navigation": "^0.3.5",
+		"@11ty/eleventy-plugin-bundle": "^1.0.4",
+		"@11tyrocks/eleventy-plugin-lightningcss": "^1.1.2",
+		"esbuild": "^0.17.19",
+		"html-minifier-terser": "^7.2.0",
+		"typograf": "^7.1.0"
+	}
+}

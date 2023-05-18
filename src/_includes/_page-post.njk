@@ -1,0 +1,23 @@
+---
+layout: _page-base.njk
+---
+
+<section class="container page-post__section">
+	<div class="post-head">
+		<h1>{{ title }}</h1>
+		<div class="post-author">
+			<time datetime="{{ date.toISOString().slice(0, 10) }}">{{ date | readableDate }}</time>
+			<address>{{ author or 'Кирилл Шмелёв'}}</address>
+		</div>
+	</div>
+
+	<div class="post-content">
+
+		{{ content | safe }}
+
+	</div>
+
+	<a class="button button--center" href="{{ '/blog/' | url }}">Все публикации</a>
+
+
+</section>

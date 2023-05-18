@@ -1,0 +1,44 @@
+---
+title: 'Кирилл Шмелёв'
+description: 'Учусь, автоматизирую проекты в социальных сетях, интересуюсь разработкой и доступностью сервисов.'
+layout: _page-base.njk
+---
+
+<!-- Первый экран: -->
+<section class="container mb-l">
+	<div class="hero">
+		<div class="hero__content">
+			<h1 class="h1">Привет,<br /> меня зовут Кирилл Шмелёв!</h1>
+			<p>Я живу в невидимом мире. Нет, вы не подумайте, что это какая-то личная разновидность Нарнии в шкафу, которую я себе придумал! Я обычный человек, только не вижу этот мир так, как вы. Да, я инвалид по зрению с детства.</p>
+			<p>Пусть мир открыт мне не так как большинству, это не мешает познавать его, развиваться и создавать что-то своё. Я точно знаю, что для раскрытия своего внутреннего потенциала достаточно только желания. Поэтому стараюсь найти для себя что-то новое и интересное в каждом дне.</p>
+			<img class="hero__image" src="{{ '/img/hero.jpg' | url }}" alt="Фото Кирилла Шмелёва">
+		</div>
+		<ul class="links links--fs">
+			<li>
+				<a class="links__card links__card--icon" target="_blank" rel="noopener" href="{{ _site.siteTelegram }}">
+					<span class="links__description">Блог</span>
+					в Telegram
+				</a>
+			</li>
+			<li>
+				<a class="links__card links__card--icon" target="_blank" rel="noopener" href="{{ _site.siteVkontakte }}">
+					<span class="links__description">Блог</span>
+					в VK
+				</a>
+			</li>
+		</ul>
+	</div>
+</section>
+
+<section class="container section-blog">
+	<ul class="blog">
+		{% set blogHome = collections.blog | reverse %}
+		{% for blog in blogHome.slice(0, 3) %}
+		<li class="blog__card">
+			<h2 class="blog__title h3"><a class="stretch" href="{{ blog.url | url }}">{{ blog.data.title }}</a></h2>
+			<p class="blog__desc">{{ blog.data.description }}</p>
+			<span class="blog__more">Читать подробнее</span>
+		</li>
+		{% endfor %}
+	</ul>
+</section>

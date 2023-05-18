@@ -1,0 +1,29 @@
+<header class="header container">
+
+	<a class="header__brand" href="{{ '/' | url }}">Кирилл Шмелёв</a>
+
+
+	<nav class="header__nav offcanvas" id="offcanvasNavbar" tabindex="-1">
+
+		<button class="header__button header__button--cross" type="button" data-bs-dismiss="offcanvas" aria-label="Закрыть меню"></button>
+
+
+		<ul class="menu">
+			<li><a class="menu__link" href="{{ '/' | url }}" {{ 'aria-current=page' if '/' == page.url }}>Главная</a></li>
+
+			<li><a class="menu__link {{ 'active' if '/achievements' in page.url }}" href="{{ '/achievements/' | url }}" {{ 'aria-current=page' if '/achievements/' == page.url }}>Достижения</a></li>
+
+			<li><a class="menu__link {{ 'active' if '/partnership' in page.url }}" href="{{ '/partnership/' | url }}" {{ 'aria-current=page' if '/partnership/' == page.url }}>Сотрудничество</a></li>
+
+			<li><a class="menu__link {{ 'active' if '/resume' in page.url }}" href="{{ '/resume/' | url }}" {{ 'aria-current=page' if '/resume/' == page.url }}>Резюме</a></li>
+
+			<li><a class="menu__link {{ 'active' if '/blog' in page.url }}" href="{{ '/blog/' | url }}" {{ 'aria-current=page' if '/blog/' == page.url }}>Блог</a></li>
+		</ul>
+		<div class="header__contacts">
+			<a class="header__link" href="tel:{{ _site.sitePhone }}">{{ _site.sitePhone }}</a>
+		</div>
+	</nav>
+
+	<button class="header__button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Открыть меню"></button>
+
+</header>

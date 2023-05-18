@@ -1,0 +1,51 @@
+<footer class="footer container">
+	<div class="footer__brand">
+		<div><a class="header__brand footer__logo" href="{{ '/' | url }}">Кирилл Шмелёв</a></div>
+		<ul class="footer__brand-info">
+			<li>ИП Шмелёв Кирилл Андреевич</li>
+			<li>ИНН: 695004617414</li>
+			<li>ОГРНИП: 323695200014973</li>
+		</ul>
+		<ul class="footer__menu-list">
+			<li><a class="footer__menu-link" href="{{ '/privacy-policy/' | url }}">Политика конфиденциальности</a></li>
+			<li><a class="footer__menu-link" href="#">Оферта</a></li>
+		</ul>
+	</div>
+	<div class="footer__menu">
+		<div class="footer__menu-group">
+			<div class="footer__menu-title">Контакты</div>
+				<ul class="footer__menu-list">
+					<li><a class="footer__menu-link" href="tel:{{ _site.sitePhone }}">{{ _site.sitePhone }}</a></li>
+					<li><a class="footer__menu-link" href="mailto:{{ _site.siteEmail }}">{{ _site.siteEmail }}</a></li>
+				</ul>
+		</div>
+		<div class="footer__menu-group">
+			<div class="footer__menu-title">Техническая поддержка</div>
+				<ul class="footer__menu-list">
+					<li><a class="footer__menu-link" href="mailto:{{ _site.siteEmailSupport }}">{{ _site.siteEmailSupport }}</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="footer__menu footer__menu-social">
+		<div class="footer__menu-group">
+			<div class="footer__menu-title">Блог</div>
+				<ul class="footer__menu-list">
+					<li><a class="footer__menu-link" target="_blank" rel="noopener" href="{{ _site.siteTelegram }}">В Telegram</a></li>
+					<li><a class="footer__menu-link" target="_blank" rel="noopener" href="{{ _site.siteVkontakte }}">В VK</a></li>
+				</ul>
+		</div>
+		<div class="footer__menu-group">
+			<div class="footer__menu-title">Социальные сети</div>
+				<ul class="footer__menu-list">
+					<li><a class="footer__menu-link" target="_blank" rel="noopener" href="{{ _site.siteInstagram }}">Instagram</a></li>
+					<li><a class="footer__menu-link" target="_blank" rel="noopener" href="{{ _site.siteTwitter }}">Twitter</a></li>
+					<li><a class="footer__menu-link" target="_blank" rel="noopener" href="{{ _site.siteTenchat }}">TenChat</a></li>
+					<li><a class="footer__menu-link" target="_blank" rel="noopener" href="{{ _site.siteGithub }}">GitHub</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="footer__copyright">
+		<address>© 2022-{% year %},&nbsp;Шмелёв Кирилл Андреевич</address>
+		<address>Сайт создан в <a target="_blank" href="https://mitorun.studio/">Mitorun Studio</a></address>
+	</div>
+</footer>

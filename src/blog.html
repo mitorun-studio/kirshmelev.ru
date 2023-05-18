@@ -1,0 +1,25 @@
+---
+title: 'Блог'
+description: 'Кирилл Шмелёв - мой блог.'
+layout: _page-base.njk
+---
+
+<section class="container">
+
+	<h1>Блог</h1>
+
+
+	<ul class="blog">
+		{% for blog in collections.blog | reverse %}
+		<li class="blog__card">
+			<!-- <div class="blog__info">
+				<time class="blog__date" datetime="{{ blog.data.date.toISOString().slice(0, 10) }}">{{ blog.data.date.toISOString().slice(0, 10) }}</time>
+			</div> -->
+			<h2 class="blog__title h4"><a class="stretch" href="{{ blog.url | url }}">{{ blog.data.title }}</a></h2>
+			<p class="blog__desc">{{ blog.data.description }}</p>
+			<span class="blog__more">Читать подробнее</span>
+		</li>
+		{% endfor %}
+	</ul>
+
+</section>
