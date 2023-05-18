@@ -7,7 +7,8 @@
 	"license": "ISC",
 	"main": "eleventy.config.js",
 	"scripts": {
-		"start": "npx @11ty/eleventy --serve --quiet"
+		"start": "npx @11ty/eleventy --serve --quiet",
+		"build": "rm -rf site && npx @11ty/eleventy"
 	},
 	"browserslist": [
 		"last 3 version",
