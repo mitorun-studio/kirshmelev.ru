@@ -1,0 +1,14 @@
+{
+	"name": "Кирилл Шмелёв",
+	"description": "Учусь, автоматизирую проекты в социальных сетях, интересуюсь разработкой и доступностью сервисов.",
+	"lang": "ru",
+	"theme_color": "",
+	"display": "browser",
+	"dir": "ltr",
+	"id": "/",
+	"start_url": "/",
+	"icons": [
+		{"src": "/img/android-chrome-192x192.png", "type": "image/png", "sizes": "192x192"},
+		{"src": "/img/android-chrome-512x512.png", "type": "image/png", "sizes": "512x512"}
+	]
+}

@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /tst
+Disallow: /fls
+Disallow: /404
+Disallow: /404.html
+Sitemap: https://kirshmelev.ru/sitemap.xml
