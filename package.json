@@ -8,13 +8,7 @@
 	"main": "eleventy.config.js",
 	"scripts": {
 		"start": "npx @11ty/eleventy --serve --quiet",
-		"build": "rm -rf site && npx @11ty/eleventy",
-		"stylelint": "npm run --prefix ../_processing stylelint",
-    "yaspeller": "npm run --prefix ../_processing yaspeller",
-    "validator": "npm run --prefix ../_processing validator",
-    "htmlhint": "npm run --prefix ../_processing htmlhint",
-    "bem": "npm run --prefix ../_processing bem",
-    "sharp": "npm run --prefix ../_processing sharp"
+		"build": "rm -rf site && npx @11ty/eleventy"
 	},
 	"browserslist": [
 		"last 3 version",
