@@ -37,7 +37,7 @@
 	<meta property="og:site_name" content="{{ _site.siteName }}">
 	<meta property="og:locale" content="{{ _site.siteLang or 'ru' }}">
 	{# <meta property="og:image" content="{{ _site.siteUrl }}/img/bg.jpg"> #}
-	<meta property="og:image" content="https://v1.screenshot.11ty.dev/{{ _site.siteUrl + page.url }}/opengraph/bigger/">
+	<meta property="og:image" content="{% openGraphScreenshotURL %}">
 	<!--<meta property="og:image:alt" content="Логотип и название бренда">-->
 	<meta property="og:url" content="{{ _site.siteUrl + page.url }}">
 	<link rel="canonical" href="{{ _site.siteUrl + page.url }}">

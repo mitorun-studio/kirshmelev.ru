@@ -68,7 +68,13 @@ module.exports = function (eleventyConfig) {
 	// Добавить текущий год {% year %}:
 	eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
-
+	eleventyConfig.addShortcode("openGraphScreenshotURL", function () {
+		const encodedURL = encodeURIComponent(
+			`https://mitorun-studio.github.io/kirshmelev.ru/${this.page.url}`
+		);
+		const cacheKey = `_${new Date().valueOf()}`;
+		return `https://v1.screenshot.11ty.dev/${encodedURL}/opengraph/${cacheKey}`;
+	});
 
 
 	//------------------------------------------------
