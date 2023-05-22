@@ -144,6 +144,8 @@ html {
 }
 
 body {
+	display: flex;
+	flex-direction: column;
 	min-height: 100vh;
 	font-family: var(--font-family, sans-serif);
 	font-weight: var(--font-weight-m, 400);
@@ -470,12 +472,6 @@ svg {
 ------------------------------------------------*/
 
 /* Gobal */
-
-body {
-	display: flex;
-	flex-direction: column;
-}
-
 @media (min-width: 520px) {
 	.page-home::before {
 		content: '';
@@ -873,7 +869,7 @@ fieldset[disabled] {
 	font-weight: 600;
 	font-size: var(--font-size-m);
 	background-color: var(--bg);
-	/*border: 1px solid var(--grey-lightest);*/
+	border: 1px solid var(--grey-lightest);
 	border-radius: var(--border-radius-l);
 	transition: 0.2s linear;
 }
@@ -996,8 +992,6 @@ fieldset[disabled] {
 
 
 
-
-
 /* Achievements */
 
 .achievements {
@@ -1036,6 +1030,12 @@ fieldset[disabled] {
 	background: url('./img/sprite.svg#eye') 50% / contain no-repeat;
 }
 
+
+/* Partnership */
+
+.section__partnership {
+	list-style-position: inside;
+}
 
 /* Footer */
 

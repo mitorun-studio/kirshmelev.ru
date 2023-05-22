@@ -26,3 +26,4 @@ site
 src/_includes/css
 yarn-debug.log*
 yarn-error.log*
+run_scripts.sh

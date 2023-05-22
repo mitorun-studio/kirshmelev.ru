@@ -7,8 +7,14 @@
 	"license": "ISC",
 	"main": "eleventy.config.js",
 	"scripts": {
-		"start": "npx @11ty/eleventy --serve --quiet",
-		"build": "rm -rf site && npx @11ty/eleventy"
+		"start": "rm -rf site && npx @11ty/eleventy --serve --quiet",
+		"build": "rm -rf site && npx @11ty/eleventy",
+		"sl": "bash run_scripts.sh stylelint",
+		"yl": "bash run_scripts.sh yaspeller",
+		"w3c": "bash run_scripts.sh validator",
+		"hh": "bash run_scripts.sh htmlhint",
+		"bem": "bash run_scripts.sh bem",
+		"sharp": "bash run_scripts.sh sharp"
 	},
 	"browserslist": [
 		"last 3 version",
