@@ -3,4 +3,4 @@ Disallow: /tst
 Disallow: /fls
 Disallow: /404
 Disallow: /404.html
-Sitemap: https://kirshmelev.ru/sitemap.xml
+Sitemap: https://mitorun-studio.github.io/sitemap.xml
