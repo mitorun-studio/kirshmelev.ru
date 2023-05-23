@@ -1,5 +1,5 @@
 {
-	"name": "mitosite",
+	"name": "template",
 	"version": "1.0.0",
 	"description": "",
 	"keywords": [],
@@ -9,12 +9,12 @@
 	"scripts": {
 		"start": "rm -rf site && npx @11ty/eleventy --serve --quiet",
 		"build": "rm -rf site && npx @11ty/eleventy",
-		"sl": "bash run_scripts.sh stylelint",
-		"yl": "bash run_scripts.sh yaspeller",
-		"w3c": "bash run_scripts.sh validator",
-		"hh": "bash run_scripts.sh htmlhint",
-		"bem": "bash run_scripts.sh bem",
-		"sharp": "bash run_scripts.sh sharp"
+		"sl": "bash run-scripts.sh stylelint",
+		"ys": "bash run-scripts.sh yaspeller",
+		"w3c": "bash run-scripts.sh validator",
+		"hh": "bash run-scripts.sh htmlhint",
+		"bem": "bash run-scripts.sh bem",
+		"sharp": "bash run-scripts.sh sharp"
 	},
 	"browserslist": [
 		"last 3 version",

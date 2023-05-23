@@ -67,11 +67,11 @@ module.exports = function (eleventyConfig) {
 	// Добавить текущий год {% year %}:
 	eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
-	// Генерация OpenGraph изображения для каждой страницы:
-	eleventyConfig.addShortcode("openGraphScreenshotURL", function (baseUrl) {
+	// Генерация OpenGraph картинки для каждой страницы:
+	eleventyConfig.addShortcode("opengraph", function (baseUrl) {
 		const pathPrefix = eleventyConfig.pathPrefix || "";
 		const encodedURL = encodeURIComponent(baseUrl + pathPrefix + this.page.url);
-		return `https://v1.screenshot.11ty.dev/${encodedURL}/opengraph/bigger/`;
+		return encodedURL;
 	});
 
 
