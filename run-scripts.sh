@@ -4,7 +4,7 @@ export PROJECT_NAME=${PWD##*/}
 # Get the script name from the first command line argument
 SCRIPT_NAME=$1
 # Run the specified script with the specified project name
-cd ../_PLUGINS
+cd ../plugins
 case $SCRIPT_NAME in
   stylelint)
     npx stylelint ../$PROJECT_NAME/src/**/*.css --fix
