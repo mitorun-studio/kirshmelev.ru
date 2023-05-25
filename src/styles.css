@@ -61,7 +61,7 @@
 	--grey: hsl(215, 5%, 44%);
 	--grey-light: hsl(215, 5%, 60%);
 	--grey-light-a: hsla(215, 5%, 62%, 0.05);
-	--grey-lightest: hsla(215, 30%, 50%, 0.05);
+	--grey-lightest: hsla(215, 30%, 50%, 0.15);
 	--color-main: hsl(215, 83%, 50%);
 	--color-main-lightest: hsla(215, 83%, 50%, 0.08);
 	/*--color-second: coral;
@@ -613,7 +613,7 @@ svg {
 }
 
 .menu__link:hover {
-	border-color: var(--grey-light);
+	border-color: var(--grey-lightest);
 }
 
 @media (max-width: 1100px) {
