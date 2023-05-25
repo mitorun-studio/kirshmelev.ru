@@ -935,7 +935,7 @@ fieldset[disabled] {
 	margin-bottom: calc(0px - var(--margin-l));
 	padding-top: var(--margin-m);
 	padding-bottom: var(--margin-m);
-	background-color: var(--grey-lightest);
+	background-color: var(--grey-light-a);
 }
 
 .blog__card {
