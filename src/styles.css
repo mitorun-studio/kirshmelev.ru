@@ -1346,6 +1346,13 @@ fieldset[disabled] {
 	display: inline-block;
 }
 
+.codeblock {
+	background-color: var(--grey-lightest);
+	border-radius: 0.25em;
+	margin: 0 0.12em;
+	padding: 0.1em 0.3em;
+}
+
 
 /*------------------------------------------------
 ---------- Дополнительные стили: -----------------
