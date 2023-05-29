@@ -1346,7 +1346,7 @@ fieldset[disabled] {
 	display: inline-block;
 }
 
-.codeblock,
+.code-block,
 .post-content pre > code {
 	background-color: var(--grey-lightest);
 	border-radius: 0.25em;
