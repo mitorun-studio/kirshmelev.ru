@@ -5,29 +5,27 @@ layout: _page-base.njk
 ---
 
 <!-- Первый экран: -->
-<section class="container mb-l">
-	<div class="about">
-		<div class="about__content">
-			<h1 class="h1">Привет,<br /> меня зовут Кирилл Шмелёв!</h1>
-			<p>Я живу в невидимом мире. Нет, вы не подумайте, что это какая-то личная разновидность Нарнии в шкафу, которую я себе придумал! Я обычный человек, только не вижу этот мир так, как вы. Да, я инвалид по зрению с детства.</p>
-			<p>Пусть мир открыт мне не так как большинству, это не мешает познавать его, развиваться и создавать что-то своё. Я точно знаю, что для раскрытия своего внутреннего потенциала достаточно только желания. Поэтому стараюсь найти для себя что-то новое и интересное в каждом дне.</p>
-			<img class="about__image" src="{{ '/img/hero.jpg' | url }}" alt="Фото Кирилла Шмелёва">
-		</div>
-		<ul class="links links--fs">
-			<li>
-				<a class="links__card links__card--icon" target="_blank" rel="noopener" href="{{ _site.siteTelegram }}">
-					<span class="links__description">Блог</span>
-					в Telegram
-				</a>
-			</li>
-			<li>
-				<a class="links__card links__card--icon" target="_blank" rel="noopener" href="{{ _site.siteVkontakte }}">
-					<span class="links__description">Блог</span>
-					в VK
-				</a>
-			</li>
-		</ul>
+<section class="container section section-about">
+	<div class="about__content">
+		<h1 class="h1">Привет,<br /> меня зовут Кирилл Шмелёв!</h1>
+		<p>Я живу в невидимом мире. Нет, вы не подумайте, что это какая-то личная разновидность Нарнии в шкафу, которую я себе придумал! Я обычный человек, только не вижу этот мир так, как вы. Да, я инвалид по зрению с детства.</p>
+		<p>Пусть мир открыт мне не так как большинству, это не мешает познавать его, развиваться и создавать что-то своё. Я точно знаю, что для раскрытия своего внутреннего потенциала достаточно только желания. Поэтому стараюсь найти для себя что-то новое и интересное в каждом дне.</p>
+		<img class="about__image" src="{{ '/img/hero.jpg' | url }}" alt="Фото Кирилла Шмелёва">
 	</div>
+	<ul class="links links--fs">
+		<li>
+			<a class="links__card links__card--icon" target="_blank" rel="noopener" href="{{ _site.siteTelegram }}">
+				<span class="links__description">Блог</span>
+				в Telegram
+			</a>
+		</li>
+		<li>
+			<a class="links__card links__card--icon" target="_blank" rel="noopener" href="{{ _site.siteVkontakte }}">
+				<span class="links__description">Блог</span>
+				в VK
+			</a>
+		</li>
+	</ul>
 </section>
 
 <section class="container section-blog">
