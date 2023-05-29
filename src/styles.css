@@ -1346,7 +1346,8 @@ fieldset[disabled] {
 	display: inline-block;
 }
 
-.codeblock {
+.codeblock,
+.post-content pre > code {
 	background-color: var(--grey-lightest);
 	border-radius: 0.25em;
 	margin: 0 0.12em;
