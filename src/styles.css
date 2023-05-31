@@ -541,7 +541,7 @@ svg {
 	/*margin: 0 min(1.5vw,6px);*/
 	padding: 0.8em 1em;
 	font-weight: var(--font-weight-m);
-	font-size: var(--font-size-l);
+	font-size: var(--font-size-m);
 	line-height: 1;
 	white-space: nowrap;
 	text-decoration: none;
