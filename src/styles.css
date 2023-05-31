@@ -120,6 +120,7 @@
 		--margin-m: 40px;
 		--margin-s: 24px;
 		--margin-xs: 10px;
+		tab-size: 4;
 	}
 }
 
@@ -1342,18 +1343,31 @@ fieldset[disabled] {
 	background: hsl(60, 63%, 92%);
 } это для выделения колонок при ховере */
 
-.post-content code {
+.code,
+.post-content:not(pre) code {
 	display: inline-block;
+	font-size: 0.8em;
 }
 
 .code-block,
 .post-content pre > code {
+	display: block;
 	background-color: var(--grey-lightest);
-	border-radius: 0.25em;
+	border-radius: var(--border-radius-m);
 	margin: 0 0.12em;
 	padding: 0.1em 0.3em;
+	white-space: pre;
+	overflow-x: auto;
+	font-size: 0.8em;
+	tab-size: 2;
 }
 
+@media (min-width: 1300px) {
+	.code-block,
+	.post-content pre > code {
+		tab-size: 4;
+	}
+}
 
 /*------------------------------------------------
 ---------- Дополнительные стили: -----------------
