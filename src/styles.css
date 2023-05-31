@@ -541,7 +541,7 @@ svg {
 	/*margin: 0 min(1.5vw,6px);*/
 	padding: 0.8em 1em;
 	font-weight: var(--font-weight-m);
-	font-size: var(--font-size-s);
+	font-size: var(--font-size-l);
 	line-height: 1;
 	white-space: nowrap;
 	text-decoration: none;
@@ -559,7 +559,7 @@ svg {
 	.menu__link {
 		margin: min(1.5vw, 6px) 0;
 		padding: 16px 20px;
-		font-size: var(--font-size-l);
+		font-size: var(--font-size-s);
 	}
 }
 
