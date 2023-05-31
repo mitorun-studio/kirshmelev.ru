@@ -492,13 +492,12 @@ svg {
 .header {
 	position: relative;
 	display: grid;
-	grid-template-columns: auto 1fr;
-	grid-auto-columns: auto;
-	grid-auto-flow: column;
-	gap: var(--margin-m);
+	grid-template: auto 1fr;
+	gap: var(--margin-s);
 	align-items: center;
+	padding-top: var(--margin-xs);
+	padding-bottom: var(--margin-xs);
 	width: 100%;
-	min-height: 80px;
 	background-color: var(--color);
 }
 
@@ -510,88 +509,31 @@ svg {
 	color: var(--white);
 }
 
+.header__link {
+	font-weight: var(--font-weight-l);
+	font-size: var(--font-size-l);
+	white-space: nowrap;
+	color: var(--white);
+	justify-self: end;
+}
+
 .header__nav {
-	display: grid;
-	grid-template: auto/1fr auto;
-	align-items: center;
-}
-
-@media (max-width: 1100px) {
-	.offcanvas {
-		position: fixed;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		z-index: 1030;
-		display: grid;
-		grid-template: repeat(2, min-content)/auto;
-		gap: var(--margin-m);
-		place-content: center;
-		width: 50%;
-		max-width: 100%;
-		height: 100vh;
-		padding: 50px var(--container-padding) var(--container-padding);
-		background-color: var(--color);
-		background-clip: padding-box;
-		outline: 0;
-		visibility: hidden;
-		overflow-y: auto;
-		transition: translate 0.3s ease-in-out;
-		translate: 100%;
-	}
-
-	.offcanvas.show:not(.hiding), .offcanvas.showing {
-		translate: none;
-	}
-
-	.offcanvas.hiding, .offcanvas.show, .offcanvas.showing {
-		visibility: visible;
-	}
-
-	.offcanvas-backdrop {
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 997;
-		width: 100vw;
-		height: 100vh;
-		background-color: var(--color);
-		/* backdrop-filter: blur(5px); */
-	}
-
-	.offcanvas-backdrop.fade {
-		opacity: 0;
-	}
-
-	.offcanvas-backdrop.show {
-		opacity: 0.5;
-	}
-}
-
-@media (max-width: 520px) {
-	.offcanvas {
-		width: 100%;
-	}
+	grid-area: 2/1/3/3;
 }
 
 .menu {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-}
-
-@media (max-width: 1100px) {
-	.menu {
-		flex-direction: column;
-	}
+	gap: var(--margin-xs);
 }
 
 .menu__link {
 	display: inline-block;
 	/*margin: 0 min(1.5vw,6px);*/
-	padding: 0.8em 1.2em;
+	padding: 0.8em 1em;
 	font-weight: var(--font-weight-m);
-	font-size: var(--font-size-m);
+	font-size: var(--font-size-s);
 	line-height: 1;
 	white-space: nowrap;
 	text-decoration: none;
@@ -615,46 +557,6 @@ svg {
 
 .menu__link:hover {
 	border-color: var(--grey-lightest);
-}
-
-@media (max-width: 1100px) {
-	.header__contacts {
-		padding: 0 20px;
-	}
-}
-
-.header__link {
-	font-weight: var(--font-weight-l);
-	font-size: var(--font-size-l);
-	white-space: nowrap;
-	color: var(--white);
-}
-
-.header__button {
-	justify-self: end;
-	width: 40px;
-	/* это влияет на высоту хедера */
-	height: 40px;
-	/* это влияет на высоту хедера */
-	/*margin-right: -9px; это чтобы иконка бургера была по линии контента */
-	background: content-box url('./img/sprite.svg#burger') 50% / 26px no-repeat transparent;
-	background-color: transparent;
-	border: none;
-	-webkit-tap-highlight-color: hsla(0, 0%, 100%, 0);
-	/* или transparent; это вообще убирает синий фон в хроме при нажатии на кнопку! */
-}
-
-.header__button--cross {
-	position: absolute;
-	top: 20px;
-	right: var(--container-padding);
-	background-image: url('./img/sprite.svg#cross');
-}
-
-@media (min-width: 1100px) {
-	.header__button {
-		display: none;
-	}
 }
 
 

@@ -2,10 +2,9 @@
 
 	<a class="header__brand" href="{{ '/' | url }}">Кирилл Шмелёв</a>
 
+	<a class="header__link" href="tel:{{ _site.sitePhone }}">{{ _site.sitePhone }}</a>
 
-	<nav class="header__nav offcanvas" id="offcanvasNavbar" tabindex="-1">
-
-		<button class="header__button header__button--cross" type="button" data-bs-dismiss="offcanvas" aria-label="Закрыть меню"></button>
+	<nav class="header__nav">
 
 
 		<ul class="menu">
@@ -19,11 +18,7 @@
 
 			<li><a class="menu__link {{ 'active' if '/blog' in page.url }}" href="{{ '/blog/' | url }}" {{ 'aria-current=page' if '/blog/' == page.url }}>Блог</a></li>
 		</ul>
-		<div class="header__contacts">
-			<a class="header__link" href="tel:{{ _site.sitePhone }}">{{ _site.sitePhone }}</a>
-		</div>
-	</nav>
 
-	<button class="header__button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Открыть меню"></button>
+	</nav>
 
 </header>
