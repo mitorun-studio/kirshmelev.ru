@@ -1343,31 +1343,103 @@ fieldset[disabled] {
 	background: hsl(60, 63%, 92%);
 } это для выделения колонок при ховере */
 
+
+/*-----------------------------------------
+------- Блоки с кодом (code-block): --------
+-----------------------------------------*/
 .code,
 .post-content:not(pre) code {
 	display: inline-block;
 	font-size: 0.8em;
 }
 
+
 .code-block,
-.post-content pre > code {
+.post-content pre> code {
+	position: relative;
 	display: block;
+	margin: 0;
+	padding: var(--margin-s);
+	font-size: 85%;
+	white-space: pre;
+	tab-size: 2;
 	background-color: var(--grey-lightest);
 	border-radius: var(--border-radius-m);
-	margin: 0 0.12em;
-	padding: 0.1em 0.3em;
-	white-space: pre;
-	overflow-x: auto;
-	font-size: 0.8em;
-	tab-size: 2;
+	overflow: auto hidden;
 }
 
 @media (min-width: 1300px) {
 	.code-block,
-	.post-content pre > code {
+	.post-content pre> code {
 		tab-size: 4;
 	}
 }
+
+.code-block::before,
+.post-content pre> code::before {
+	content: 'Plain';
+	/*content: attr(data-content);*/
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	/*z-index: -1;*/
+	width: fit-content;
+	font: 900 50px/0.8 var(--font-family);
+	text-align: right;
+	color: hsla(224, 15%, 50%, 0.08);
+	pointer-events: none;
+}
+
+.code-block.language-html::before,
+.post-content pre> code.language-html::before {
+	content: 'HTML';
+}
+
+.code-block.language-md::before,
+.post-content pre> code.language-md::before {
+	content: 'MD';
+}
+
+.code-block.language-njk::before,
+.post-content pre> code.language-njk::before {
+	content: 'NJK';
+}
+
+.code-block.language-css::before,
+.post-content pre> code.language-css::before {
+	content: 'CSS';
+}
+
+.code-block.language-js::before,
+.post-content pre> code.language-js::before {
+	content: 'JS';
+}
+
+.code-block.language-svg::before,
+.post-content pre> code.language-svg::before {
+	content: 'SVG';
+}
+
+.code-block.language-php::before,
+.post-content pre> code.language-php::before {
+	content: 'PHP';
+}
+
+.code-block.language-mix::before,
+.post-content pre> code.language-mix::before {
+	content: 'MIX';
+}
+
+.code-block.language-live::before,
+.post-content pre> code.language-live::before {
+	content: 'Live';
+}
+
+.code-block.language-VBA::before,
+.post-content pre> code.language-VBA::before {
+	content: 'VBA';
+}
+
 
 /*------------------------------------------------
 ---------- Дополнительные стили: -----------------
