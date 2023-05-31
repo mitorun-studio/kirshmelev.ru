@@ -521,7 +521,7 @@ svg {
 	grid-area: 2/1/3/3;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 640px) {
 	.header__nav {
 		justify-self: center;
 	}
