@@ -1353,10 +1353,8 @@ fieldset[disabled] {
 	font-size: 0.8em;
 }
 
-
 .code-block,
-.post-content pre> code {
-	position: relative;
+.post-content pre > code {
 	display: block;
 	margin: 0;
 	padding: var(--margin-s);
@@ -1365,81 +1363,15 @@ fieldset[disabled] {
 	tab-size: 2;
 	background-color: var(--grey-lightest);
 	border-radius: var(--border-radius-m);
-	overflow: auto hidden;
+	overflow-x: auto;
 }
 
 @media (min-width: 1300px) {
 	.code-block,
-	.post-content pre> code {
+	.post-content pre > code {
 		tab-size: 4;
 	}
 }
-
-.code-block::before,
-.post-content pre> code::before {
-	content: 'Plain';
-	/*content: attr(data-content);*/
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	/*z-index: -1;*/
-	width: fit-content;
-	font: 900 50px/0.8 var(--font-family);
-	text-align: right;
-	color: hsla(224, 15%, 50%, 0.08);
-	pointer-events: none;
-}
-
-.code-block.language-html::before,
-.post-content pre> code.language-html::before {
-	content: 'HTML';
-}
-
-.code-block.language-md::before,
-.post-content pre> code.language-md::before {
-	content: 'MD';
-}
-
-.code-block.language-njk::before,
-.post-content pre> code.language-njk::before {
-	content: 'NJK';
-}
-
-.code-block.language-css::before,
-.post-content pre> code.language-css::before {
-	content: 'CSS';
-}
-
-.code-block.language-js::before,
-.post-content pre> code.language-js::before {
-	content: 'JS';
-}
-
-.code-block.language-svg::before,
-.post-content pre> code.language-svg::before {
-	content: 'SVG';
-}
-
-.code-block.language-php::before,
-.post-content pre> code.language-php::before {
-	content: 'PHP';
-}
-
-.code-block.language-mix::before,
-.post-content pre> code.language-mix::before {
-	content: 'MIX';
-}
-
-.code-block.language-live::before,
-.post-content pre> code.language-live::before {
-	content: 'Live';
-}
-
-.code-block.language-VBA::before,
-.post-content pre> code.language-VBA::before {
-	content: 'VBA';
-}
-
 
 /*------------------------------------------------
 ---------- Дополнительные стили: -----------------
