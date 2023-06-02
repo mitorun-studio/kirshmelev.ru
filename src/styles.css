@@ -492,8 +492,8 @@ svg {
 .header {
 	position: relative;
 	display: grid;
-	grid-template-columns: auto 1fr;
-	gap: var(--margin-s);
+	grid-template-columns: 1fr auto;
+	gap: var(--margin-xs);
 	align-items: center;
 	padding-top: var(--margin-xs);
 	padding-bottom: var(--margin-xs);
@@ -503,6 +503,7 @@ svg {
 
 .header__brand {
 	width: min-content;
+	max-width: 6em;
 	font-weight: var(--font-weight-xl);
 	font-size: clamp(18px, calc(16.5px + 0.4vw), 20px);
 	line-height: 1.2;

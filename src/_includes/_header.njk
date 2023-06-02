@@ -10,13 +10,15 @@
 		<ul class="menu">
 			<li><a class="menu__link" href="{{ '/' | url }}" {{ 'aria-current=page' if '/' == page.url }}>Главная</a></li>
 
+			<li><a class="menu__link {{ 'active' if '/blog' in page.url }}" href="{{ '/blog/' | url }}" {{ 'aria-current=page' if '/blog/' == page.url }}>Блог</a></li>
+
+			<li><a class="menu__link {{ 'active' if '/resume' in page.url }}" href="{{ '/resume/' | url }}" {{ 'aria-current=page' if '/resume/' == page.url }}>Резюме</a></li>
+
 			<li><a class="menu__link {{ 'active' if '/achievements' in page.url }}" href="{{ '/achievements/' | url }}" {{ 'aria-current=page' if '/achievements/' == page.url }}>Достижения</a></li>
 
 			<li><a class="menu__link {{ 'active' if '/partnership' in page.url }}" href="{{ '/partnership/' | url }}" {{ 'aria-current=page' if '/partnership/' == page.url }}>Сотрудничество</a></li>
 
-			<li><a class="menu__link {{ 'active' if '/resume' in page.url }}" href="{{ '/resume/' | url }}" {{ 'aria-current=page' if '/resume/' == page.url }}>Резюме</a></li>
 
-			<li><a class="menu__link {{ 'active' if '/blog' in page.url }}" href="{{ '/blog/' | url }}" {{ 'aria-current=page' if '/blog/' == page.url }}>Блог</a></li>
 		</ul>
 
 	</nav>
