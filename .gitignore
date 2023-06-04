@@ -12,9 +12,7 @@
 .sass-cache
 .tmp
 .vscode
-SOURCE
 Thumbs.db
-_SOURCE
 _dist
 _site
 dist
@@ -26,4 +24,3 @@ site
 src/_includes/css
 yarn-debug.log*
 yarn-error.log*
-run_scripts.sh
