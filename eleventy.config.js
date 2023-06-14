@@ -4,6 +4,8 @@ const lightningCSS = require("@11tyrocks/eleventy-plugin-lightningcss");
 const pluginBundle = require("@11ty/eleventy-plugin-bundle");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const typograf = require('typograf');
+// const markdownIt = require('markdown-it')({ html: true });
+
 
 
 
