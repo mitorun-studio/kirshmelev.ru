@@ -1,28 +1,27 @@
-<!doctype html><!-- Сайт https://mitosite/ -->
+<!doctype html><!-- Сайт kirshmelev.ru -->
 <html lang="{{ _site.siteLang or 'ru' }}" prefix="og: https://ogp.me/ns#">
 <head>
+	{% getBundle "html", "head" %}
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
-	<title>
-		{% if title %}
-			{{ title if page.url == "{{ '/' | url }}" else title + ' – ' + _site.siteName }}
-		{% else %}
-			{{ _site.siteName }}
-		{% endif %}
-	</title>
+
+
+	<title>{% if title %}{{ title if page.url == '/' else title + ' – ' + _site.siteName }}{% else %}{{ _site.siteName }}{% endif %}</title>
 	<meta name="description" content="{{ description or _site.siteDescription }}">
 	{% if keywords %}
-		<meta name="keywords" content="{{ keywords }}">
+	<meta name="keywords" content="{{ keywords }}">
 	{% endif %}
-	<meta name="author" content="mitorun.studio">
-	<meta name="generator" content="Eleventy">
+	<meta name="author" content="Mitorun Studio">
+	<meta name="generator" content="{{ eleventy.generator }}">
+
+
 	<link rel="stylesheet" href="{{ '/mitosite.css' | url }}">
 	<link rel="icon" sizes="any" href="{{ '/favicon.ico' | url }}">
-	<link rel="icon" type="image/svg+xml" href="{{ '/img/favicon.svg' | url }}">
+	<link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | url }}">
 	<link rel="apple-touch-icon" sizes="180x180" href="{{ '/img/apple-touch-icon.png' | url }}">
 	<link rel="manifest" href="{{ '/manifest.json' | url }}">
 	{% if _site.siteThemeColor %}
-		<meta name="theme-color" content="{{ _site.siteThemeColor }}">
+	<meta name="theme-color" content="{{ _site.siteThemeColor }}">
 	{% endif %}
 	<link rel="preload" as="image" href="{{ '/img/sprite.svg' | url }}">
 	<!--<link rel="preload" as="font" type="font/woff2" href="/fls/inter-100-900-cyrillic.woff2" crossorigin> <link rel="preload" as="font" type="font/woff2" href="/fls/inter-100-900-latin.woff2" crossorigin>-->
@@ -36,15 +35,23 @@
 	<meta property="og:description" content="{{ description or _site.siteDescription }}">
 	<meta property="og:site_name" content="{{ _site.siteName }}">
 	<meta property="og:locale" content="{{ _site.siteLang or 'ru' }}">
-	<meta property="og:image" content="https://v1.screenshot.11ty.dev/{% opengraph _site.siteUrl %}/opengraph/bigger/">
-	<!--<meta property="og:image:alt" content="Логотип и название бренда">-->
+	<meta property="og:image" content="https://v1.screenshot.11ty.dev/{% encodeuri _site.siteUrl %}/opengraph/bigger/">
+	<!-- <meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630"> -->
+	<meta property="og:image:alt" content="Скриншот веб-страницы {{ _site.siteUrl + page.url }}">
 	<meta property="og:url" content="{{ _site.siteUrl + page.url }}">
 	<link rel="canonical" href="{{ _site.siteUrl + page.url }}">
 </head>
 
 <body class="page-{% if pageClass %}{{ pageClass }}{% elif page.fileSlug %}{{ page.fileSlug }}{% else %}home{% endif %}">
 
+
+
+
 	{% include "_header.njk" %}
+
+
+
 
 	<main class="main" id="main" tabindex="-1">
 
@@ -52,12 +59,12 @@
 
 	</main>
 
+
+
+
 	{% include "_footer.njk" %}
 
 
-	<!-- Yandex.Metrika counter -->
-	<!--<noscript></noscript>-->
-	<!-- /Yandex.Metrika counter -->
 
 
 	<noscript class="noscript"> У вас в браузере отключён JavaScript</noscript>
