@@ -4,23 +4,12 @@
 </defs>
 
 
-<svg id="burger" viewBox="0 0 8 8" fill="none" stroke="#fff" stroke-width="0.7" stroke-linecap="square">
-	<path d="M1 2H7M1 4H7M1 6H7"/>
-</svg>
-
 <svg id="arrow-link" viewBox="0 0 8 8" fill="none" stroke="#000" stroke-width="0.7">
 	<path d="M4.5 1H7V3.5 M7 1L3.5 4.5 M3.5 1.5H1L1 7L6.5 7V4.5"/>
 
 	<!--<path id="var-2" d="M4.5 1H7V3.5 M7 1L3.5 4.5 M3.5 1H1L1 7L7 7V4.5"/>-->
 </svg>
 
-<svg id="arrow" viewBox="0 0 8 8" fill="none" stroke="currentcolor" stroke-width="1">
-	<path d="M1 4H6 M4 2L6 4L4 6"/><!-- (→) -->
-
-	<!--<path d="M4 6V1 M6 4L4 6L2 4"/> (↓)
-	<path d="M2 4H7 M4 2L2 4L4 6"/> (←)
-	<path d="M4 2V7 M2 4L4 2L6 4"/> (↑) -->
-</svg>
 
 <svg id="arrow-simple" viewBox="0 0 8 8" fill="none" stroke="#166ee9" stroke-width="1">
 	<path d="M3 1L6 4L3 7"/>
@@ -30,9 +19,6 @@
 	<path id="up" d="M1 5L4 2L7 5"/>-->
 </svg>
 
-<svg id="cross" viewBox="0 0 8 8" fill="none" stroke="#fff" stroke-width="1">
-	<path d="M1 1L7 7M7 1L1 7"/>
-</svg>
 
 <svg id="done" viewBox="0 0 20 20" fill="#166ee9" stroke-width="1">
 	<path d="M2.00004 17.4445C2.00004 18.3111 2.68889 19 3.55556 19H16.4445C17.3111 19 18 18.3111 18 17.4445V8.46668C18 7.97779 17.6001 7.57787 17.1112 7.57787C16.6223 7.57787 16.2224 7.97779 16.2224 8.46668L16.2222 17.2223H3.77774V4.77778H12.4444C12.9333 4.77778 13.3332 4.37786 13.3332 3.88897C13.3332 3.40008 12.9333 3.00016 12.4444 3.00016L3.55552 3C2.68885 3 2 3.68885 2 4.55552L2.00004 17.4445Z"/>
