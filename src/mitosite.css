@@ -1,22 +1,24 @@
-/*-------- Стили для mito.site: ----------------*/
+/*------------------------------------------------
+--- Сайт kirshmelev.ru: --------------------------
+------------------------------------------------*/
 
 @font-face {
-	font-family: 'Manrope';
 	font-weight: 400;
+	font-family: 'Manrope';
 	font-style: normal;
 	src: url('./fls/Manrope-Regular.woff2') format('woff2');
 }
 
 @font-face {
-	font-family: 'Manrope';
 	font-weight: 600;
+	font-family: 'Manrope';
 	font-style: normal;
 	src: url('./fls/Manrope-SemiBold.woff2') format('woff2');
 }
 
 @font-face {
-	font-family: 'Manrope';
 	font-weight: 700;
+	font-family: 'Manrope';
 	font-style: normal;
 	src: url('./fls/Manrope-Bold.woff2') format('woff2');
 }
@@ -48,8 +50,11 @@
 	--padding-form: 14px;
 	--padding-form-s: 10px;
 	--margin-xl: 104px;
+	--margin-l2: calc(var(--margin-l) * 1.5);
 	--margin-l: 52px;
+	--margin-m2: calc(var(--margin-m) * 1.5);
 	--margin-m: 26px;
+	--margin-s2: calc(var(--margin-s) * 1.5);
 	--margin-s: 14px;
 	--margin-xs: 6px;
 
@@ -60,10 +65,12 @@
 	--grey-dark: hsl(215, 5%, 19%);
 	--grey: hsl(215, 5%, 44%);
 	--grey-light: hsl(215, 5%, 60%);
-	--grey-light-a: hsla(215, 5%, 62%, 0.05);
-	--grey-lightest: hsla(215, 30%, 50%, 0.15);
+	--grey-lightest: hsla(215, 30%, 50%, 0.12);
+	--color-main-dark: hsl(215, 93%, 21%);
 	--color-main: hsl(215, 83%, 50%);
-	--color-main-lightest: hsla(215, 83%, 50%, 0.08);
+	--color-main-lightest: hsla(215, 83%, 50%, 0.09);
+	--bg-code: hsl(0, 0%, 94%);
+	--bg-code-block: var(--bg-code);
 	/*--color-second: coral;
 	--color-success: hsl(139, 100%, 19%);
 	--color-danger: hsl(2, 100%, 28%);
@@ -81,7 +88,7 @@
 	tab-size: 2;
 }
 
-@media (min-width: 576px) {
+@media (width >= 576px) {
 	:root {
 		--font-size-l: 20px;
 		--font-size-m: 17px;
@@ -95,12 +102,12 @@
 	}
 }
 
-@media (min-width: 992px) {
+@media (width >= 992px) {
 	:root {
 		--font-size-l: 21px;
 		--font-size-m: 18px;
 		--font-size-s: 15px;
-		--container-padding: 50px;
+		--container-padding: 40px;
 		--margin-xl: 144px;
 		--margin-l: 72px;
 		--margin-m: 36px;
@@ -109,7 +116,7 @@
 	}
 }
 
-@media (min-width: 1300px) {
+@media (width >= 1300px) {
 	:root {
 		--font-size-l: 22px;
 		--font-size-m: 19px;
@@ -124,6 +131,9 @@
 	}
 }
 
+/*------------------------------------------------
+--- Базовые стили: -------------------------------
+------------------------------------------------*/
 
 *,
 *::after,
@@ -138,6 +148,10 @@
 	outline-offset: 2px;
 }
 
+/* *:focus-visible {
+	outline: -webkit-focus-ring-color auto 1px;
+} */
+
 html {
 	height: 100%;
 	scroll-behavior: smooth;
@@ -148,10 +162,10 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	font-family: var(--font-family, sans-serif);
 	font-weight: var(--font-weight-m, 400);
 	font-size: var(--font-size-m, 16px);
 	line-height: var(--line-height-m, 1.5);
+	font-family: var(--font-family, sans-serif);
 	/*letter-spacing: 0.02em;*/
 	word-spacing: 0.12em;
 	/*text-align: var(--bs-body-text-align); было в бутстрапе */
@@ -164,6 +178,31 @@ body {
 	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: hsla(0, 0%, 0%, 0);
 }
+
+a,
+button,
+input,
+textarea,
+summary,
+optgroup,
+select,
+svg {
+	font: inherit;
+	text-transform: none;
+	color: inherit;
+	touch-action: manipulation;
+}
+
+button,
+summary,
+select,
+option {
+	cursor: pointer;
+}
+
+/*------------------------------------------------
+--- Типографика: ---------------------------------
+------------------------------------------------*/
 
 h1,
 .h1,
@@ -178,10 +217,11 @@ h5,
 h6,
 .h6 {
 	margin-bottom: 1em;
-	font-family: var(--font-family-heading, sans-serif);
 	font-weight: var(--font-weight-xl, 700);
 	line-height: var(--line-height-xs, 1.2);
+	font-family: var(--font-family-heading, sans-serif);
 	text-wrap: balance;
+	hyphens: manual;/* вручную расставлять мягкий перенос с тире &shy; */
 }
 
 h1,
@@ -214,47 +254,6 @@ h6,
 	font-size: var(--font-size-m, 16px);
 }
 
-/*h1[id],
-h2[id],
-h3[id] {
-	scroll-margin: clamp(80px, 17vh, 200px);
-}*/
-
-/* p,
-.p {
-	margin-bottom: 1em;
-} */
-
-b,
-strong,
-.b {
-	font-weight: var(--font-weight-l, 600);
-}
-
-i,
-.i {
-	font-style: oblique;
-}
-
-a,
-button,
-input,
-textarea,
-summary,
-optgroup,
-select,
-svg {
-	font: inherit;
-	text-transform: none;
-	color: inherit;
-	touch-action: manipulation;
-}
-
-button,
-summary {
-	cursor: pointer;
-}
-
 a {
 	/*box-decoration-break: clone;
 	-webkit-box-decoration-break: clone;*/
@@ -265,55 +264,9 @@ a {
 	color: initial;
 }*/
 
-ul[class]:not(.list),
-ol[class]:not(.list) {
+ul,
+ol {
 	list-style: none;
-}
-
-/*ul:not([class]),
-ol:not([class]),*/
-
-.list {
-	margin-bottom: 1em;
-	padding-left: 30px;
-}
-
-/*ul:not([class]) li:not([class]),
-ol:not([class]) li:not([class])*/
-
-.list li {
-	margin-bottom: 0.5em;
-}
-
-kbd,
-code,
-pre,
-samp {
-	font-family: var(--font-family-mono, monospace);
-	font-size: 1em;
-	direction: ltr;
-	white-space: pre-wrap;
-	word-wrap: break-word;
-	word-break: break-all;
-	unicode-bidi: bidi-override;
-}
-
-kbd:not([class]),
-.kbd,
-code:not([class]),
-.code {
-	margin: 0 0.12em;
-	padding: 0.1em 0.3em;
-	background-color: var(--grey-lightest);
-	border-radius: 0.25em;
-}
-
-hr,
-.hr {
-	margin: 16px 0;
-	color: inherit;
-	border: 0;
-	border-top: 1px solid var(--grey);
 }
 
 img,
@@ -322,9 +275,9 @@ video {
 	display: block;
 	max-width: 100%;
 	height: auto;
-	/*aspect-ratio: 3 / 2;*/
+	/*aspect-ratio: 3/2;*/
 	object-fit: contain;
-	/* object-position: left center; */
+	/*object-position: left center;*/
 }
 
 svg {
@@ -333,28 +286,548 @@ svg {
 	shape-rendering: geometricprecision;
 }
 
-.noscript {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	padding: 4px 0;
-	font: 400 14px/1 var(--font-family-mono, monospace);
-	text-align: center;
-	color: var(--color-danger, red);
-	background: hsl(0, 0%, 100%);
-	/*border: 1px solid var(--color-danger, red);*/
+
+
+
+/*------------------------------------------------
+--- Компонент стилей для статей: -----------------
+------------------------------------------------*/
+
+.content {
+	--font-size-m: 17px;
+	display: grid;
+	row-gap: 1.2em;/* или calc(1em + 2px); */
+	max-width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: var(--font-size-m);
 }
+
+@media (width >= 576px) {
+	.content {
+		--font-size-m: 18px;
+	}
+}
+
+@media (width >= 992px) {
+	.content {
+		--font-size-m: 20px;
+	}
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+	margin-top: 1.5em;
+	margin-bottom: max(0.06em, 4px);
+	line-height: var(--line-height-xs, 1.2);
+}
+
+.content h1 {
+	font-size: clamp(26px, calc(22px + 1.5vw), 40px);
+}
+
+.content h2 {
+	font-size: clamp(24px, calc(21.2px + 0.9vw), 32px);
+}
+
+.content h3 {
+	font-size: clamp(22px, calc(20.8px + 0.6vw), 28px);
+	line-height: var(--line-height-s, 1.3);
+}
+
+.content h4 {
+	font-size: clamp(20px, calc(20.4px + 0.3vw), 24px);
+	line-height: var(--line-height-s, 1.3);
+}
+
+.content h5 {
+	font-size: var(--font-size-l, 19px);
+	line-height: var(--line-height-m, 1.5);
+}
+
+.content h6 {
+	font-size: var(--font-size-m, 16px);
+	line-height: var(--line-height-m, 1.5);
+}
+
+.content > *:first-child {
+	margin-top: 0;
+}
+
+.content p {
+	font-size: var(--font-size-m);
+	line-height: 1.5;
+}
+
+.link,
+.content a {
+	text-decoration: underline;
+	text-decoration-thickness: 0.08em;
+	text-underline-offset: 0.26em;
+	color: var(--color-main);
+	transition: 0.15s linear;
+	text-decoration-skip-ink: none;
+}
+
+.link:hover,
+.link:focus-visible,
+.content a:hover,
+.content a:focus-visible {
+	text-underline-offset: 0.32em;
+}
+
+.link:active,
+.content a:active {
+	text-underline-offset: 0.18em;
+	filter: brightness(0.9);
+}
+
+b,
+strong,
+.b,
+.content strong {
+	font-weight: var(--font-weight-l, 600);
+}
+
+i,
+.i,
+.content em {
+	font-style: italic;
+	/* font-style: oblique 40deg; */
+}
+
+/* Элемент Зачёркнутый текст можно использовать как хак для стилизации маленького или серого текста: */
+
+s,
+.s,
+.content s {
+	font-size: var(--font-size-s);
+	text-decoration: line-through;
+	text-decoration-thickness: 0.08em;
+	text-decoration-color: red;
+	/* opacity: 0.6; */
+	color: var(--grey);
+}
+
+.list,
+.content ul,
+.content ol {
+	display: grid;
+	row-gap: 0.5em;
+	padding-left: 30px;
+	list-style: auto;
+}
+
+/* .content :is(ol, ul) :is(ol, ul) */
+
+.content ul ul,
+.content ol ol,
+.content ul ol,
+.content ol ul {
+	margin-top: 0.5em;
+	/* margin-bottom: 0.5em; */
+}
+
+.content ul ul,
+.content ol ul {
+	list-style-type: circle;
+}
+
+.list li,
+.content li {
+	font-size: var(--font-size-m);
+	line-height: var(--line-height-s, 1.3);
+}
+
+/* Кастомные маркеры списков: */
+
+.list ul,
+.content ul {
+	list-style: disc outside url('./img/ul.svg');/* disc | circle | square | decimal | georgian | trad-chinese-informal | kannada | '–' | custom-counter-style | none; *//* outside | inside; */
+}
+
+.hr,
+.content hr {
+	font-size: var(--font-size-m);
+	color: inherit;
+	border: 0;
+	border-top: 1px solid var(--grey-light);
+}
+
+.content blockquote {
+	padding: 0.8em 0.7em;
+	font-size: var(--font-size-m);
+	font-style: italic;
+	color: var(--color-main);
+	background-color: var(--grey-lightest);
+	/* border-left: 4px solid var(--grey); */
+	border-radius: var(--border-radius-l);
+}
+
+@media (width >= 576px) {
+	.content blockquote {
+		padding: 1.2em 1.4em;
+		/* border-left-width: 6px; */
+	}
+}
+
+.content img,
+.content video {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	max-height: 600px;
+	/*aspect-ratio: 3/2;*/
+	object-fit: contain;
+	object-position: center center;
+	border: 1px solid var(--grey-light);
+	border-radius: var(--border-radius-m);
+}
+
+/* Ниже стили блоков от Макеева, у себя их ещё не проверял: */
+
+.content iframe {
+	display: block;
+	width: 100%;
+	border: none;
+}
+
+.content figure {
+	display: grid;
+	row-gap: 1em;
+	padding-block: 1em;
+	margin: 0;
+}
+
+.content figcaption {
+	font-size: var(--font-size-s);
+	text-align: center;
+}
+
+.content details {
+	overflow: auto;
+}
+
+abbr[title] {
+	text-decoration: underline dotted;
+	/*cursor: help; этот курсор бывает закрывает первую букву во всплывашке */
+	text-decoration-skip-ink: none;/* указывает чтобы подчёркивания не обрывались если наезжают на букву */
+}
+
+sub,
+sup {
+	position: relative;
+	font-size: 0.75em;
+	line-height: 0;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+small {
+	font-size: 80%;
+}
+
+mark {
+	padding: 0.2em;
+	background-color: hsl(50, 81%, 94%);
+}
+
+/*--- Инлайновый код: -------------------*/
+
+kbd,
+code,
+pre,
+samp {
+	font-size: 95%;
+	font-family: var(--font-family-mono, monospace);
+	direction: ltr;
+	white-space: pre-wrap;
+	/* word-wrap: break-word; */
+	word-break: break-word;
+	unicode-bidi: bidi-override;
+}
+
+.kbd,
+.code,
+.content:not(pre) > code {
+	padding: 0.20em 0.26em;
+	font-weight: 440;
+	font-size: 95%;
+	line-height: 1;
+	hyphens: none;
+	background: var(--bg-code);
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+	/* border: 1px dashed var(--grey); */
+	border-radius: 0.3em;
+	margin-inline: 0.1em;/* var(--bg-code); */
+}
+
+.file,
+samp:not([class]) {
+	display: inline-block;
+	margin-inline: 0.1em;
+	padding-inline: 0.2em;
+	background: var(--bg-code);
+}
+
+/*--- Блок с кодом: ----------------------*/
+
+.code-block,
+.content pre {
+	position: relative;
+	display: block;
+	font-size: var(--font-size-m);
+	background-color: var(--bg-code-block);
+	overflow: auto;
+}
+
+@media (width < 576px) {
+	.code-block,
+	.content pre {
+		margin-right: calc(-1 * var(--container-padding));
+		margin-left: calc(-1 * var(--container-padding));
+	}
+}
+
+/* .code-block::after,
+.content pre::after {
+	content: '';
+	position: absolute;
+	inset: 0 0 14px;
+	background-image: linear-gradient(to right, var(--bg-code) 2px, transparent var(--container-padding), transparent calc(100% - var(--container-padding)), var(--bg-code-block) calc(100% - 2px));
+	pointer-events: none;
+}
+
+@media (width >= 576px) {
+	.code-block::after,
+	.content pre::after {
+		background-image: linear-gradient(to right, var(--bg-code-block) 3px, transparent 1.8em, transparent calc(100% - 1.8em), var(--bg-code-block) calc(100% - 3px));
+	}
+} */
+
+.code-block code,
+.content pre > code {
+	display: block;
+	/* min-height: 8em; */
+	padding: 0.9em var(--container-padding);
+	font-size: 95%;
+	line-height: 1.2;
+	white-space: pre;
+	tab-size: 2;
+	/* background-color: var(--grey-lightest); */
+	overflow: auto;
+}
+
+@media (width >= 576px) {
+	.code-block code,
+	.content pre > code {
+		padding: 0.9em 1.8em;
+	}
+}
+
+@media (width >= 800px) {
+	.code-block code,
+	.content pre > code {
+		tab-size: 4;
+	}
+}
+
+/*--- Скроллбар для блока кода: ----------------*/
+
+/* .content pre > code::-webkit-scrollbar {
+	height: 14px;
+}
+
+.content pre > code::-webkit-scrollbar-thumb {
+	background: content-box transparent;
+	border: 4px solid transparent;
+	border-radius: 9px;
+	transition: 0.17s linear;
+}
+
+.content pre > code::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+.content pre > code:hover::-webkit-scrollbar-thumb {
+	background-color: var(--grey-light);
+} */
+
+/*--- Тег с названием языка кода №1: ----------*/
+
+.content pre > code[class*='language-'] {
+	padding-top: 1.6em;
+}
+
+.code-block code[class*='language-']::before,
+.content pre > code[class*='language-']::before {
+	/*content: attr(data-content);*/
+	position: absolute;
+	top: 0;
+	left: var(--container-padding);
+	padding: 0 0.7em;
+	font-size: var(--font-size-s);
+	text-transform: uppercase;
+	color: var(--white);
+	background-color: hsl(224, 78%, 66%);
+	border-radius: 0 0 0.4em 0.4em;
+	pointer-events: none;
+}
+
+@media (width >= 576px) {
+	.code-block code[class*='language-']::before,
+	.content pre > code[class*='language-']::before {
+		left: 2.2em;
+	}
+}
+
+.language-html::before {
+	content: 'HTML';
+	background-color: hsl(8, 77%, 63%);
+}
+
+.language-md::before {
+	content: 'MD';
+	background-color: hsl(54, 85%, 63%);
+}
+
+.language-njk::before {
+	content: 'NJK';
+	background-color: hsl(287, 70%, 66%);
+}
+
+.language-css::before {
+	content: 'CSS';
+	background-color: hsl(134, 72%, 60%);
+}
+
+.language-js::before {
+	content: 'JS';
+	background-color: hsl(319, 78%, 69%);
+}
+
+.language-svg::before {
+	content: 'SVG';
+	background-color: hsl(256, 75%, 70%);
+}
+
+.language-php::before {
+	content: 'PHP';
+	background-color: hsl(39, 100%, 50%);
+}
+
+.language-mix::before {
+	content: 'MIX';
+	background-color: hsl(39, 100%, 50%);
+}
+
+.language-live::before {
+	content: 'Live';
+	background-color: hsl(39, 100%, 50%);
+}
+
+.language-shell::before {
+	content: 'Shell';
+	background-color: hsl(39, 100%, 50%);
+}
+
+.language-vba::before {
+	content: 'VBA';
+	background-color: hsl(39, 100%, 50%);
+}
+
+/*--- Конец базовых стилей Контента. ----------*/
 
 
 
 
 /*------------------------------------------------
------- Основные блоки и служебные классы: --------
+--- Компонент таблица: ------------------------
+------------------------------------------------*/
+
+.table,
+.content table {
+	min-width: 100%;
+	font-size: var(--font-size-s);
+	line-height: var(--line-height-xs);
+	/* min-width: 600px; */
+	table-layout: auto;
+	background-color: hsl(0, 0%, 100%);
+	/* border: 1px solid red; */
+	border-collapse: collapse;
+	border-spacing: 0;
+	/*empty-cells: show | hide; hide будет прятать пустые ячейки */
+	overflow: auto;/* auto | fixed; метод вычисления ширины ячеек, желательно указывать ширину таблицы *//* separate | collapse; это соединяет рамки соседних ячеек. Но при этом рамки становятся как бы частью таблицы и не принадлежат ячейкам, например при фиксировании ячеек рамки теряются. *//* 0 | 8px; это профилактика для border-collapse: collapse; */
+	/*overflow: hidden; это для выделения колонок псевдоэлементом */
+}
+
+.table caption,
+.content caption {
+	margin: 1em 0 0.5em;
+	font-weight: var(--font-weight-xl);
+	font-size: var(--font-size-l);
+	line-height: var(--line-height-s);
+	text-align: left;
+}
+
+.table tbody tr:nth-of-type(even),
+.content tbody tr:nth-of-type(even) {
+	background-color: hsl(208, 60%, 97%);
+}
+
+.table th,
+.content th {
+	font-weight: var(--font-weight-l);
+	background: hsl(208, 12%, 88%);
+}
+
+.table th,
+.table td,
+.content th,
+.content td {
+	/*position: relative; это для выделения колонок псевдоэлементом */
+	padding: 0.4em 0.6em;
+	/*text-align: center; стоит ли так оформлять по умолчанию? */
+	/*vertical-align: middle; это по умолчанию в хроме */
+	border: 1px solid var(--color-main-dark);
+	overflow: hidden;/* это вариант рамки с помощью border */
+	/*box-shadow: 0 0 0 2px hsl(0, 0%, 60%); это вариант рамки с помощью box-shadow */
+	/*outline: 2px solid var(--grey-light); это вариант рамки с помощью outline */
+}
+
+/* Конец базового компонента таблицы. */
+
+
+
+
+/*------------------------------------------------
+--- Служебные классы: ----------------------------
 ------------------------------------------------*/
 
 .container {
-	padding-right: max(calc(50% - var(--container) / 2), var(--container-padding, 14px));
-	padding-left: max(calc(50% - var(--container) / 2), var(--container-padding, 14px));
+	padding-right: max(calc(50% - var(--container, 1200px) / 2), var(--container-padding, 14px));
+	padding-left: max(calc(50% - var(--container, 1200px) / 2), var(--container-padding, 14px));
+}
+
+.main {
+	flex-grow: 1;/* для прижатия футера. */
+}
+
+.section {
+	padding-top: var(--margin-l);
+	padding-bottom: var(--margin-l);
 }
 
 .mb-xl {
@@ -409,10 +882,19 @@ svg {
 .stretch::before {
 	content: '';
 	position: absolute;
-	top: 0;
-	right: 0;
+	inset: 0;
+}
+
+.noscript {
+	position: fixed;
 	bottom: 0;
-	left: 0;
+	width: 100%;
+	padding: 4px 0;
+	font: 400 14px/1 var(--font-family-mono, monospace);
+	text-align: center;
+	color: var(--color-danger, red);
+	background: hsl(0, 0%, 100%);
+	/*border: 1px solid var(--color-danger, red);*/
 }
 
 .icon {
@@ -424,7 +906,7 @@ svg {
 	clip-rule: evenodd;
 }
 
-@media (min-width: 992px) {
+@media (width >= 992px) {
 	.icon {
 		width: 36px;
 		height: 36px;
@@ -435,45 +917,12 @@ svg {
 
 
 /*------------------------------------------------
------ Служебные классы скриптов бутстрапа: -------
-------------------------------------------------*/
-
-/* Это скрывает раскрывающийся контент когда нет класса .show: */
-
-.collapse:not(.show) {
-	display: none;
-}
-
-/* Этот класс добавляется скриптом бутстрапа ВО ВРЕМЯ АНИМАЦИИ, для раскрывающегося по высоте (вертикально) контента: */
-
-.collapsing {
-	height: 0;
-	overflow: hidden;
-	transition: height 0.35s ease;
-
-	/* Стили если раскрытие происходит горизонтально (.collapse-horizontal):
-	width: 0;
-	height: auto;
-	transition: width 0.35s ease;*/
-}
-
-.fade {
-	transition: opacity 0.2s linear;
-}
-
-.fade:not(.show) {
-	opacity: 0;
-}
-
-
-
-
-/*------------------------------------------------
 ---------- Уникальное оформление сайта: ----------
 ------------------------------------------------*/
 
-/* Gobal */
-@media (min-width: 520px) {
+/* Баннер на Главной: */
+
+@media (width >= 520px) {
 	.page-home::before {
 		content: '';
 		display: block;
@@ -486,7 +935,7 @@ svg {
 }
 
 /*------------------------------------------------
----------- Header: -------------------------------
+--- Header: --------------------------------------
 ------------------------------------------------*/
 
 .header {
@@ -495,14 +944,22 @@ svg {
 	grid-template-columns: 1fr auto;
 	gap: var(--margin-xs);
 	align-items: center;
+	width: 100%;
 	padding-top: var(--margin-xs);
 	padding-bottom: var(--margin-xs);
-	width: 100%;
 	background-color: var(--color);
 }
 
+@media (width >= 1140px) {
+	.header {
+		grid-template-columns: auto 1fr auto;
+		padding-top: 24px;
+		padding-bottom: 24px;
+	}
+}
+
 .header__brand {
-	width: min-content;
+	/* width: min-content; */
 	max-width: 6em;
 	font-weight: var(--font-weight-xl);
 	font-size: clamp(18px, calc(16.5px + 0.4vw), 20px);
@@ -515,14 +972,15 @@ svg {
 	font-size: var(--font-size-l);
 	white-space: nowrap;
 	color: var(--white);
-	justify-self: end;
 }
 
-.header__nav {
-	grid-area: 2/1/3/3;
+@media (width < 1140px) {
+	.header__nav {
+		grid-area: 2/1/3/3;
+	}
 }
 
-@media (min-width: 640px) {
+@media (width >= 768px) {
 	.header__nav {
 		justify-self: center;
 	}
@@ -531,10 +989,11 @@ svg {
 .menu {
 	display: flex;
 	flex-wrap: nowrap;
-	align-items: center;
 	gap: var(--margin-xs);
-	overflow-x: auto;
+	align-items: center;
 	white-space: nowrap;
+	/* justify-content: center; */
+	overflow-x: auto;
 }
 
 .menu__link {
@@ -549,11 +1008,11 @@ svg {
 	color: var(--white);
 	border: 1px solid transparent;
 	border-radius: var(--border-radius-m);
-	transition: 0.3s 0.1s;
+	transition: 0.17s;
 }
 
 .menu__link[aria-current='page'] {
-	background-color: hsla(215, 83%, 50%, 0.2);
+	background-color: var(--color-main-lightest);
 }
 
 @media (max-width: 1100px) {
@@ -565,19 +1024,7 @@ svg {
 }
 
 .menu__link:hover {
-	border-color: var(--grey-lightest);
-}
-
-
-/* Main */
-
-.main {
-	flex: 1;
-}
-
-.section {
-	padding-top: var(--margin-l);
-	padding-bottom: var(--margin-l);
+	border-color: var(--grey-light);
 }
 
 /*------------------------------------------------
@@ -689,8 +1136,8 @@ input[disabled],
 input[aria-disabled='true'],
 fieldset[disabled] {
 	transform: none;
-	opacity: 0.6;/* это делает отключенные кнопки полупрозрачными */
-	filter: grayscale(0.8);/* это делает отключенные кнопки серенькими */
+	opacity: 0.6;/* это делает отключённые кнопки полупрозрачными */
+	filter: grayscale(0.8);/* это делает отключённые кнопки серенькими */
 }
 
 /*-------- Конец компонента Кнопка. ------------*/
@@ -700,26 +1147,18 @@ fieldset[disabled] {
 	margin-top: var(--margin-l);
 }
 
-
-/* about */
-
-.section-about {
+.hero {
 	display: grid;
 	gap: var(--margin-s);
 }
 
-.about__content {
-	display: grid;
-	gap: var(--margin-s);
-}
-
-@media (min-width: 800px) {
-	.about__content {
+@media (width >= 800px) {
+	.hero {
 		grid-template: auto auto 1fr/2fr 384px;
 	}
 }
 
-.about__content > h1 {
+.hero > h1 {
 	margin: 0;
 }
 
@@ -727,12 +1166,12 @@ fieldset[disabled] {
 	font-weight: var(--font-weight-l);
 }
 
-.about__image {
+.hero__img {
 	border-radius: var(--border-radius-xl);
 }
 
-@media (min-width: 800px) {
-	.about__image {
+@media (width >= 800px) {
+	.hero__img {
 		grid-area: 1/2/4/3;
 	}
 }
@@ -744,7 +1183,7 @@ fieldset[disabled] {
 	gap: var(--margin-s);
 }
 
-@media (min-width: 800px) {
+@media (width >= 800px) {
 	.resume__item {
 		grid-template-columns: 1fr 3fr;
 		grid-auto-flow: column;
@@ -764,7 +1203,7 @@ fieldset[disabled] {
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
 	.links--fs {
 		grid-template-columns: repeat(auto-fit, 282px);
 	}
@@ -772,7 +1211,7 @@ fieldset[disabled] {
 
 .links__card {
 	display: grid;
-	gap: var(--margin-xs);
+	gap: var(--margin-xs) var(--margin-m);
 	padding: 18px 21px;
 	font-weight: var(--font-weight-l);
 	font-size: var(--font-size-m);
@@ -796,8 +1235,25 @@ fieldset[disabled] {
 	background: url('./img/sprite.svg#arrow-link') 50% / contain no-repeat;
 }
 
+@media (width >= 440px) {
+	.links__card--img {
+		grid-template: 1fr auto / 1fr auto;
+	}
+}
+
 .links__card:hover {
 	background-color: var(--color-main-lightest);
+}
+
+.links__img {
+	grid-area: 1 / 2 / -1 / -1;
+}
+
+.links__img img {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	object-position: center top;
 }
 
 .links__description {
@@ -819,7 +1275,7 @@ fieldset[disabled] {
 
 .work__list li {
 	padding-left: var(--margin-m);
-	background: url('./img/sprite.svg#done') 0px 50%/20px 20px no-repeat;
+	background: url('./img/sprite.svg#done') 0 50%/20px 20px no-repeat;
 }
 
 .work__list li + li {
@@ -839,16 +1295,16 @@ fieldset[disabled] {
 	gap: var(--margin-s);
 }
 
-@media (min-width: 720px) {
+@media (width >= 720px) {
 	.blog {
 		grid-template: auto/repeat(auto-fill, minmax(283px, 1fr));
 	}
 }
 
 .section-blog {
-	padding-top: var(--margin-m);
-	padding-bottom: var(--margin-m);
-	background-color: var(--grey-light-a);
+	padding-top: var(--margin-l);
+	padding-bottom: var(--margin-l);
+	background-color: var(--grey-lightest);
 }
 
 .blog__card {
@@ -977,13 +1433,13 @@ fieldset[disabled] {
 	gap: var(--margin-m);
 }
 
-@media (min-width: 680px) {
+@media (width >= 680px) {
 	.footer__menu-social {
 		grid-area: 2/2;
 	}
 }
 
-@media (min-width: 1060px) {
+@media (width >= 1060px) {
 	.footer__menu-social {
 		grid-area: auto;
 	}
@@ -1023,7 +1479,7 @@ fieldset[disabled] {
 	opacity: 0.6;
 }
 
-@media (min-width: 680px) {
+@media (width >= 680px) {
 	.footer__copyright {
 		grid-area: 3/1/3/3;
 		grid-template: auto / auto auto;
@@ -1031,7 +1487,7 @@ fieldset[disabled] {
 	}
 }
 
-@media (min-width: 1060px) {
+@media (width >= 1060px) {
 	.footer__copyright {
 		grid-area: 2/1/3/4;
 	}
@@ -1055,7 +1511,7 @@ fieldset[disabled] {
 	border-bottom: 1px solid var(--grey-lightest);
 }
 
-@media (min-width: 800px) {
+@media (width >= 800px) {
 	.post-head {
 		padding-right: var(--margin-xl);
 		padding-left: var(--margin-xl);
@@ -1066,223 +1522,22 @@ fieldset[disabled] {
 	margin: 0;
 }
 
-.post-author {
+.creation {
 	font-size: var(--font-size-m);
 }
 
-.post-author > time {
+.creation__date {
 	margin-right: var(--margin-s);
 	color: var(--grey);
 }
 
-.post-author > address {
+.creation__info {
 	display: inline-block;
 	font-style: normal;
 	color: var(--grey);
 }
 
-.post-content {
-	max-width: 800px;
-	margin-right: auto;
-	/*width: min(80%, 680px);*/
-	margin-left: auto;
-}
 
-.post-content h1,
-.post-content h2,
-.post-content h3,
-.post-content h4 {
-	margin-top: 1.6em;
-	margin-bottom: 0.8em;
-	line-height: var(--line-height-xs);
-}
-
-.post-content > h1 {
-	margin-top: 0;
-}
-
-.post-content p,
-.post-content li {
-	margin-bottom: 1em;
-}
-
-.post-content ul,
-.post-content ol {
-	margin-bottom: 1em;
-	padding-left: 32px;
-}
-
-/*.post-content li {
-	margin-bottom: 0.6em;
-}*/
-
-.post-content a,
-.link {
-	position: relative;
-	display: inline-block;
-	/*text-decoration: underline;*/
-	color: var(--color);
-	transition: 0.15s linear;
-}
-
-.post-content a::after,
-.link::after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 1px;
-	background-color: var(--color);
-	transition: 0.13s linear;
-}
-
-.post-content a:hover::after,
-.post-content a:focus::after,
-.link:hover::after,
-.link:focus::after {
-	transform: translateY(2px);
-}
-
-.post-content a:active,
-.link:active {
-	filter: brightness(0.9);
-}
-
-.post-content a:active::after,
-.link:active::after {
-	transform: translateY(0);
-}
-
-.post-content img {
-	width: 100%;
-	max-width: 100%;
-	height: auto;
-	max-height: 500px;
-	/*aspect-ratio: 3 / 2;*/
-	object-fit: contain;
-	object-position: center center;
-	border-radius: var(--border-radius-m);
-}
-
-.post-content blockquote {
-	margin-bottom: 1em;
-	padding: var(--margin-s);
-	font-size: var(--font-size-l);
-	color: var(--color-main);
-	background-color: var(--grey-dark-a);
-	border-radius: var(--border-radius-l);
-}
-
-@media (min-width: 992px) {
-	.post-content blockquote {
-		padding: var(--margin-m);
-	}
-}
-
-.post-content blockquote p {
-	margin-bottom: 0;
-	font-size: var(--font-size-m);
-}
-
-.post-content table {
-	display: block;
-	overflow-x: auto;
-	font-size: var(--font-size-s);
-	line-height: var(--line-height-s);
-}
-
-.post-content table caption {
-	margin: 1em 0 0.5em;
-	color: hsl(0, 0%, 26%);
-	font: 700 20px/1.3 var(--font-heading);
-	text-align: left;
-}
-
-.post-content table thead {
-	position: sticky;/* это чтобы зафиксировать верхний ряд! */
-	top: 2px;/* 2px чтобы была видна верхняя рамка с помощью box-shadow или outline */
-}
-
-.post-content table tbody tr:nth-of-type(even) {
-	background: var(--color-main-lightest);
-}
-
-.post-content table th {
-	background: var(--grey-lightest);
-}
-
-.post-content table th,
-.post-content table td {
-	/*position: relative; это для выделения колонок псевдоэлементом */
-	padding: 4px 8px;
-	overflow: hidden;
-	text-align: center;/* стоит ли так оформлять по умолчанию? */
-	/*vertical-align: middle; это по умолчанию в хроме */
-	/*border: 2px solid hsl(0, 0%, 60%); это вариант рамки с помощью border */
-	/*box-shadow: 0 0 0 2px hsl(0, 0%, 60%); это вариант рамки с помощью box-shadow */
-	outline: 1px solid var(--grey);/* это вариант рамки с помощью outline */
-}
-
-.post-content table th[rowspan],
-.post-content table td[rowspan] {
-	writing-mode: vertical-rl;
-	/*text-orientation: upright;*/
-	/*writing-mode: vertical-rl; transform: rotate(180deg);*/
-	/*writing-mode: horizontal-tb | vertical-rl | vertical-lr | sideways-rl | sideways-lr*/
-}
-
-.post-content table tr:hover {
-	/*background: hsl(60, 63%, 92%);*/
-	box-shadow: inset 0 0 0 100vmax hsla(50, 90%, 55%, 0.1);
-}
-
-.post-content table td:hover {
-	/*background: hsl(60, 67%, 86%);*/
-	box-shadow: inset 0 0 0 100vmax hsla(50, 90%, 55%, 0.1);
-}
-
-/*.post-content td:hover::after,
-.post-content th:hover::after {
-	content: '';
-	position: absolute;
-	top: -3000px;
-	left: 0;
-	z-index: -1;
-	width: 100%;
-	height: 6000px;
-	background: hsl(60, 63%, 92%);
-} это для выделения колонок при ховере */
-
-
-/*-----------------------------------------
-------- Блоки с кодом (code-block): --------
------------------------------------------*/
-.code,
-.post-content:not(pre) code {
-	display: inline-block;
-	font-size: 0.8em;
-}
-
-.code-block,
-.post-content pre > code {
-	display: block;
-	margin: 0;
-	padding: var(--margin-s);
-	font-size: 85%;
-	white-space: pre;
-	tab-size: 2;
-	background-color: var(--grey-lightest);
-	border-radius: var(--border-radius-m);
-	overflow-x: auto;
-}
-
-@media (min-width: 1300px) {
-	.code-block,
-	.post-content pre > code {
-		tab-size: 4;
-	}
-}
 
 
 
@@ -1307,7 +1562,7 @@ fieldset[disabled] {
 
 
 /*------------------------------------------------
----------- Дополнительные стили: -----------------
+--- Дополнительные стили: ------------------------
 ------------------------------------------------*/
 
 /* Код для визуально-скрытых (vh = visually-hidden) элементов html и vhf = visually-hidden-focusable: */

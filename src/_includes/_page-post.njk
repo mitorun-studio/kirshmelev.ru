@@ -4,20 +4,26 @@ layout: _page-base.njk
 
 <section class="container section section-post">
 	<div class="post-head">
-		<h1>{{ title }}</h1>
-		<div class="post-author">
-			<time datetime="{{ date.toISOString().slice(0, 10) }}">{{ date | readableDate }}</time>
-			<address>{{ author or 'Кирилл Шмелёв'}}</address>
+		<h1 class="h1">{{ title }}</h1>
+
+		<div class="creation">
+			<time class="creation__date" datetime="{{ date.toISOString().slice(0, 10) }}">{{ date | readableDate }}</time>
+			<address class="creation__info">{{ author or 'Кирилл Шмелёв'}}</address>
 		</div>
 	</div>
 
-	<div class="post-content">
+
+
+
+	<div class="content">
 
 		{{ content | safe }}
 
 	</div>
 
-	<a class="button button--center" href="{{ '/blog/' | url }}">Все публикации</a>
 
+
+
+	<a class="button button--center" href="/blog/">Все публикации</a>
 
 </section>

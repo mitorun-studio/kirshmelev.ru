@@ -1,10 +1,11 @@
 ---
+eleventyExcludeFromCollections: true
+# permalink: false
+# layout: false
+
 title: 'Это заголовок H1, а также это идёт в метатег title'
 description: 'Это описание в метатег description'
 date: 2023-04-20
-
-eleventyExcludeFromCollections: true
-layout: false
 ---
 
 # Заголовок H1

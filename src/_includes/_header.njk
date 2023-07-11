@@ -1,26 +1,27 @@
 <header class="header container">
 
-	<a class="header__brand" href="{{ '/' | url }}">Кирилл Шмелёв</a>
+	<a class="header__brand" href="/">Кирилл Шмелёв</a>
 
-	<a class="header__link" href="tel:{{ _site.sitePhone }}">{{ _site.sitePhone }}</a>
+
+
 
 	<nav class="header__nav">
-
-
 		<ul class="menu">
-			<li><a class="menu__link" href="{{ '/' | url }}" {{ 'aria-current=page' if '/' == page.url }}>Главная</a></li>
+			<li><a class="menu__link" href="/" {{ 'aria-current=page' if '/' == page.url }}>Главная</a></li>
 
-			<li><a class="menu__link {{ 'active' if '/blog' in page.url }}" href="{{ '/blog/' | url }}" {{ 'aria-current=page' if '/blog/' == page.url }}>Блог</a></li>
+			<li><a class="menu__link {{ 'active' if '/blog' in page.url }}" href="/blog/" {{ 'aria-current=page' if '/blog/' == page.url }}>Блог</a></li>
 
-			<li><a class="menu__link {{ 'active' if '/resume' in page.url }}" href="{{ '/resume/' | url }}" {{ 'aria-current=page' if '/resume/' == page.url }}>Резюме</a></li>
+			<li><a class="menu__link {{ 'active' if '/resume' in page.url }}" href="/resume/" {{ 'aria-current=page' if '/resume/' == page.url }}>Резюме</a></li>
 
-			<li><a class="menu__link {{ 'active' if '/achievements' in page.url }}" href="{{ '/achievements/' | url }}" {{ 'aria-current=page' if '/achievements/' == page.url }}>Достижения</a></li>
+			<li><a class="menu__link {{ 'active' if '/achievements' in page.url }}" href="/achievements/" {{ 'aria-current=page' if '/achievements/' == page.url }}>Достижения</a></li>
 
-			<li><a class="menu__link {{ 'active' if '/partnership' in page.url }}" href="{{ '/partnership/' | url }}" {{ 'aria-current=page' if '/partnership/' == page.url }}>Сотрудничество</a></li>
-
-
+			<li><a class="menu__link {{ 'active' if '/partnership' in page.url }}" href="/partnership/" {{ 'aria-current=page' if '/partnership/' == page.url }}>Сотрудничество</a></li>
 		</ul>
-
 	</nav>
+
+
+
+
+	<a class="header__link" href="tel:{{ _site.sitePhone }}">{{ _site.sitePhone }}</a>
 
 </header>

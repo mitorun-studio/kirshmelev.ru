@@ -26,19 +26,19 @@ date: 2023-05-28
 
 Для всех элементов управления можно использовать тип `Control`, но он не поддерживает отправку событий (вы не сможете реагировать на взаимодействие с ним). Выглядеть это будет так:
 
-```VBA
+```vba
 Dim MyElement As Control
 ```
 
 Я же, вместе с официальной документацией Microsoft, рекомендую использовать для каждого элемента управления соответствующий ему тип (таблица с типами приведена ниже), например:
 
-```VBA
+```vba
 Dim MyCommandButton As CommandButton
 ```
 
 Для того, чтобы элемент отправлял события, в строку нужно добавить параметр `WithEvents`. Вот так:
 
-```VBA
+```vba
 Dim WithEvents MyCommandButton As CommandButton
 ```
 
@@ -48,7 +48,7 @@ Dim WithEvents MyCommandButton As CommandButton
 
 #### Синтаксис
 
-```VBA
+```vba
 Set [Var] = [Form].Controls.Add([ProgID], [Name], [Visible])
 ```
 
@@ -91,7 +91,7 @@ ProgID и Name, используемые в выражениях метода `C
 
 Module1:
 
-```VBA
+```vba
 ' Объявляем процедуру с названием «Start»
 Sub Start()
 ' Вызываем процедуру «Init» объекта «UserForm1»
@@ -107,7 +107,7 @@ End Sub
 
 UserForm1:
 
-```VBA
+```vba
 ' Инициализируем объектную переменную
 Dim WithEvents MyTextBox As msforms.TextBox
 
@@ -125,13 +125,13 @@ End Sub
 
 Так как мы присвоили вновь созданному элементу управления TextBox имя «myTextBox1», теперь обращаться к нему можно и по этому имени, например:
 
-```VBA
+```vba
 UserForm1.Controls("myTextBox1") = "Hello World!"
 ```
 
 Этой строкой можно заменить строку:
 
-```VBA
+```vba
 myCont = "Hello World!"
 ```
 
@@ -145,7 +145,7 @@ myCont = "Hello World!"
 
 UserForm1:
 
-```VBA
+```vba
 Sub MyTextBox_Change()
 ' Выведем диалоговое окно с новым содержанием поля
 MSGBox MyTextBox.Text
@@ -158,7 +158,7 @@ End Sub
 
 UserForm1:
 
-```VBA
+```vba
 Dim WithEvents MyComboBox As msforms.ComboBox
 
 Sub Init()
@@ -188,7 +188,7 @@ End Sub
 
 UserForm1:
 
-```VBA
+```vba
 Dim WithEvents MyFrame As Frame
 Dim WithEvents MyOptionButton1 As msforms.OptionButton
 Dim WithEvents MyOptionButton2 As msforms.OptionButton

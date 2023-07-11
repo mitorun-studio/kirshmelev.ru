@@ -15,21 +15,23 @@
 	<meta name="generator" content="{{ eleventy.generator }}">
 
 
-	<link rel="stylesheet" href="{{ '/mitosite.css' | url }}">
-	<link rel="icon" sizes="any" href="{{ '/favicon.ico' | url }}">
-	<link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | url }}">
-	<link rel="apple-touch-icon" sizes="180x180" href="{{ '/img/apple-touch-icon.png' | url }}">
-	<link rel="manifest" href="{{ '/manifest.json' | url }}">
+	<link rel="stylesheet" href="/mitosite.css">
+	<link rel="icon" sizes="any" href="/favicon.ico">
+	<link rel="icon" sizes="any" type="image/svg+xml" href="/favicon.svg">
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+	<link rel="manifest" href="/manifest.json">
 	{% if _site.siteThemeColor %}
-	<meta name="theme-color" content="{{ _site.siteThemeColor }}">
+	<meta name="theme-color" content="{{ _site.siteThemeColor or '#fff' }}">
 	{% endif %}
-	<link rel="preload" as="image" href="{{ '/img/sprite.svg' | url }}">
+	<link rel="preload" as="image" href="/img/sprite.svg">
 	<!--<link rel="preload" as="font" type="font/woff2" href="/fls/inter-100-900-cyrillic.woff2" crossorigin> <link rel="preload" as="font" type="font/woff2" href="/fls/inter-100-900-latin.woff2" crossorigin>-->
 	<!-- htmlmin:ignore -->
 	<!-- Yandex.Metrika counter -->
 	<!--<script type="text/javascript"></script>-->
 	<!-- /Yandex.Metrika counter -->
 	<!-- htmlmin:ignore -->
+
+
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="{{ title or _site.siteName }}">
 	<meta property="og:description" content="{{ description or _site.siteDescription }}">
@@ -53,7 +55,7 @@
 
 
 
-	<main class="main" id="main" tabindex="-1">
+	<main class="main">
 
 		{{ content | safe }}
 
@@ -67,7 +69,10 @@
 
 
 
-	<noscript class="noscript"> У вас в браузере отключён JavaScript</noscript>
+	{% include "_scripts.njk" %}
+
+
+
 
 </body>
 </html>
